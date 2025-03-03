@@ -7,8 +7,8 @@
             <span> La Wife</span>
         </div>
 
-     <ChatMensajes/>   
-     <CajaMensajes/>
+     <ChatMensajes :nuntii="nuntii"/>   
+     <CajaMensajes v-on:mensaje-enviado="($event) => unNuevoMensaje($event)"/>
 
     
 </section>
@@ -17,5 +17,9 @@
 <script lang="ts" setup>
 import CajaMensajes from '@/components/chat/CajaMensajes.vue';
 import ChatMensajes from '@/components/chat/ChatMensajes.vue';
+import { useChat } from '@/composables/useChat';
+
+const {nuntii, unNuevoMensaje} = useChat();
+
 
 </script>
