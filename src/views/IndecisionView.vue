@@ -8,7 +8,7 @@
         </div>
 
      <ChatMensajes :nuntii="nuntii"/>   
-     <CajaMensajes/>
+     <CajaMensajes v-on:mensaje-enviado="($event) => unNuevoMensaje($event)"/>
 
     
 </section>
@@ -17,23 +17,9 @@
 <script lang="ts" setup>
 import CajaMensajes from '@/components/chat/CajaMensajes.vue';
 import ChatMensajes from '@/components/chat/ChatMensajes.vue';
-import type { ChatNuntius } from '@/components/interfaces/chat-nuntius.interface';
-import { ref } from 'vue';
+import { useChat } from '@/composables/useChat';
 
-const nuntii = ref<ChatNuntius[]>([
-    {
-        id: new Date().getTime(),
-        nuntius: "Quiéres ir a tomar café?",
-        meusEst: true,
-    },
-
-    {
-        id: new Date().getTime() + 1,
-        nuntius: "No",
-        meusEst: false,
-        imago: "https://yesno.wtf/assets/no/17-829284e9dd894ce9fb65fbe86d2e382c.gif"
-    },
-])
+const {nuntii, unNuevoMensaje} = useChat();
 
 
 </script>
