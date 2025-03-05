@@ -2,7 +2,7 @@
     
     <div class="p-4 flex-1 overflow-y-auto">
         <div class="flex flex-col space-y-2">
-            <Burbuja :meus-est="true" nuntius="¿Salimos a cenar?"/>
+            <Burbuja :meus-est="true" nuntius=""/>
 
             <Burbuja
             v-for="nuntius in nuntii"

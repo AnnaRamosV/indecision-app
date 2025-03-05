@@ -8,7 +8,7 @@
         </div>
 
      <ChatMensajes :nuntii="nuntii"/>   
-     <CajaMensajes v-on:mensaje-enviado="($event) => unNuevoMensaje($event)"/>
+     <CajaMensajes @mensaje-enviado="unNuevoMensaje"/>
 
     
 </section>

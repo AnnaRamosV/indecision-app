@@ -20,7 +20,7 @@ const aquiTienesTuRespuesta = async() => {
 const unNuevoMensaje = async (texto: string) => {
 
     if(texto.length === 0) return;
-    if(texto.endsWith("?")) return;
+    if(!texto.endsWith("?")) return;
 
     nuntii.value.push({
         id: new Date().getTime(),
@@ -29,12 +29,11 @@ const unNuevoMensaje = async (texto: string) => {
       
     })
 
-    await somnum (1.5)
+    await somnum (1)
 
-    const {answer, image} = await aquiTienesTuRespuesta();
+    const {answer, image } = await aquiTienesTuRespuesta();
 
     
-
     nuntii.value.push({
         id: new Date().getTime(),
         nuntius: answer,
